@@ -1,17 +1,17 @@
 package controller;
 
-import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.Controller;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 /**
  * Created by dengry on 2016/12/1.
  */
-public class HelloWorld implements Controller {
-    public ModelAndView handleRequest(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws Exception {
-        System.out.println("===");
-        return new ModelAndView("hello");
+@Controller
+public class HelloWorld {
+    @RequestMapping("/hello")
+    public String hello() {
+        return "hello";
     }
+
 }
